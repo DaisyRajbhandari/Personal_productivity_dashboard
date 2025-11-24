@@ -1,41 +1,112 @@
-# Full-Stack Application with Docker Compose
+# Personal Productivity Dashboard
 
-This repository contains a full-stack application running through **Docker Compose**, making development and deployment consistent, portable, and easy to manage. The setup includes containerized services (frontend, backend, and database depending on your configuration) that communicate seamlessly through Docker networks.
+A full-stack productivity dashboard that helps users manage **notes, todos, reminders, bookmarks, quotes, text tools, and a Pomodoro timer** — all in one place.  
+Built with **React + Tailwind CSS (Frontend)** and **Express.js (Backend)**, fully containerized with **Docker Compose** for easy deployment.
 
 ---
 
 ## 🚀 Features
 
-- Fully containerized environment using **Docker Compose**
-- Easy boot-up with a single command
-- Automatic service orchestration (frontend, backend, database, etc.)
-- Hot-reload support depending on your tech stack
-- Reproducible environment across any machine
-- Centralized configuration in `docker-compose.yml`
+### 📝 Notes Manager
+- Create, edit, delete notes  
+- Categorization + tag search  
+- API-powered full CRUD support  
+
+### ✅ To-Do Manager
+- Add tasks with priority  
+- Update status (pending/completed)  
+- Filter by priority, status, or ID  
+
+### ⏰ Reminders System
+- Create reminders with date/time  
+- Snooze, fetch today’s and upcoming reminders  
+
+### 🔖 Bookmarks Manager
+- Save useful URLs with tags and categories  
+- Search and advanced filtering  
+
+### 💬 Quotes Module
+- Random quotes  
+- Browse by category  
+- Add or delete quotes  
+
+### 🔧 Text Utilities
+- Word count  
+- Case conversions  
+- Remove duplicates  
+- Sort lines  
+- Find & replace  
+
+### ⏳ Pomodoro Timer
+- Start/stop focus sessions  
+- Track active timers  
+
+### 📊 Dashboard Overview
+- Quick summaries of all modules  
+- Auto-refreshed statistics  
 
 ---
 
-## 🧱 Project Structure
-/
-├── docker-compose.yml
-├── .gitignore
-├── src/ 
-├── Backend 
-├──  Frontend 
-└── README.md
-## ▶️ Getting Started
+## 🛠️ Tech Stack
 
-### **1. Install Docker**
-Make sure you have Docker and Docker Compose installed:
+### **Frontend**
+- React + Vite
+- Tailwind CSS
+- React Router
+- Custom animations, glass UI, interactive cards
 
-- https://www.docker.com/get-started/
+### **Backend**
+- Express.js :contentReference[oaicite:0]{index=0}
+- UUID for ID generation
+- In-memory structured data store  
+- 30+ REST API endpoints
 
-### **2. Clone the repository**
+### **DevOps**
+- Docker  
+- Docker Compose  
+- Hot Reload (Frontend & Backend)
 
-git clone https://github.com/YourUsername/YourRepoName.git
-cd YourRepoName
+---
 
-### **3. Start all services
-docker compose up --build
+## 📁 Project Structure
 
+personal-productivity-dashboard/
+│── backend/
+│ ├── index.js
+│ ├── package.json
+│ └── Dockerfile
+│
+│── frontend/
+│ ├── src/
+│ │ ├── App.jsx
+│ │ ├── main.jsx
+│ │ ├── index.css
+│ │ ├── config.js
+│ │ └── components/
+│ ├── package.json
+│ ├── index.html
+│ └── Dockerfile
+│
+│── docker-compose.yml
+│── README.md
+
+
+---
+
+## ▶️ Running With Docker
+
+### **1. Start everything**
+docker-compose up --build
+
+2. Access services
+
+Frontend → http://localhost:3000
+
+Backend API → http://localhost:4000/api
+
+Health Check → http://localhost:4000/api/health
+
+
+3. Stop services
+docker-compose down
 
